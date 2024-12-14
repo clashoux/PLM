@@ -68,12 +68,7 @@
 											<!--begin:Menu link-->
 											<a class="menu-link" href="/products">
 												<span class="menu-icon">
-													<i class="ki-duotone ki-code fs-2">
-														<span class="path1"></span>
-														<span class="path2"></span>
-														<span class="path3"></span>
-														<span class="path4"></span>
-													</i>
+													<i class="fas fa-box"></i>
 												</span>
 												<span class="menu-title">Products</span>
 											</a>
@@ -84,18 +79,23 @@
 											<!--begin:Menu link-->
 											<a class="menu-link" href="/ranges">
 												<span class="menu-icon">
-													<i class="ki-duotone ki-code fs-2">
-														<span class="path1"></span>
-														<span class="path2"></span>
-														<span class="path3"></span>
-														<span class="path4"></span>
-													</i>
+													<i class="fas fa-chart-line"></i>
 												</span>
 												<span class="menu-title">Ranges</span>
 											</a>
 											<!--end:Menu link-->
 										</div>
 										<!--end:Menu item-->
+										<div class="menu-item">
+											<!--begin:Menu link-->
+											<a class="menu-link" href="/cities">
+												<span class="menu-icon">
+													<i class="fas fa-globe"></i>
+												</span>
+												<span class="menu-title">Cities</span>
+											</a>
+											<!--end:Menu link-->
+										</div>
 									</div>
 									<!--end::Menu-->
 								</div>

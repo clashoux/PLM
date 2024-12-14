@@ -38,6 +38,26 @@ return new class extends Migration
             $table->float('production_price');
             $table->foreignId('reference_id')->constrained('references');
         });
+
+        Schema::create('cities', function (Blueprint $table) {
+            $table->id();
+            $table->string('name');
+        });
+
+        Schema::create('locations', function (Blueprint $table) {
+            $table->id();
+            $table->string('name');
+            $table->foreignId('city_id')->constrained('cities');
+            $table->enum('type', ['Factory', 'Warehouse', 'Selling Point']);
+        });
+
+        Schema::create('reference_version_locations', function (Blueprint $table) {
+            $table->id();
+            $table->foreignId('location_id')->constrained('locations');
+            $table->foreignId('reference_version_id')->constrained('reference_versions');
+            $table->integer('quantity');
+            $table->float('selling_price');
+        });
     }
 
     /**

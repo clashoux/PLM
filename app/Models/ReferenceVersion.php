@@ -21,4 +21,9 @@ class ReferenceVersion extends Model
     {
         return $this->belongsTo(Reference::class);
     }
+
+    public function referenceVersionsLocations()
+    {
+        return $this->hasMany(ReferenceVersionLocation::class);
+    }
 }

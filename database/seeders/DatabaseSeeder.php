@@ -18,6 +18,9 @@ class DatabaseSeeder extends Seeder
             RangeSeeder::class,
             ReferenceSeeder::class,
             ReferenceVersionSeeder::class,
+            CitySeeder::class,
+            LocationSeeder::class,
+            ReferenceVersionLocationSeeder::class,
         ]);
     }
 }

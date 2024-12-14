@@ -5,6 +5,10 @@ use App\Http\Controllers\ProductController;
 use App\Http\Controllers\RangeController;
 use App\Http\Controllers\ReferenceController;
 use App\Http\Controllers\ReferenceVersionController;
+use App\Http\Controllers\CityController;
+use App\Http\Controllers\LocationController;
+use App\Http\Controllers\ReferenceVersionLocationController;
+
 Route::get('/', function () {
     return view('welcome');
 });
@@ -17,3 +21,11 @@ Route::group(['prefix' => 'products/{product}', 'as' => 'products.'], function (
     });
 });
 Route::resource('ranges', RangeController::class);
+Route::resource('cities', CityController::class);
+Route::group(['prefix' => 'cities/{city}', 'as' => 'cities.'], function () {
+    Route::resource('locations', LocationController::class);
+    Route::group(['prefix' => 'locations/{location}', 'as' => 'locations.'], function () {
+        Route::resource('reference-versions', ReferenceVersionLocationController::class);
+    });
+});
+
