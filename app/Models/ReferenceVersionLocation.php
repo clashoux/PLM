@@ -11,19 +11,24 @@ class ReferenceVersionLocation extends Model
     protected $fillable = ['location_id', 'reference_version_id', 'quantity', 'selling_price'];
 
     public $timestamps = false;
-    
+
     protected $casts = [
         'selling_price' => 'float',
         'quantity' => 'int',
     ];
 
-    public function location()
+    public function location(): \Illuminate\Database\Eloquent\Relations\BelongsTo
     {
         return $this->belongsTo(Location::class);
     }
 
-    public function referenceVersion()
+    public function referenceVersion(): \Illuminate\Database\Eloquent\Relations\BelongsTo
     {
         return $this->belongsTo(ReferenceVersion::class);
+    }
+
+    public function transactions(): \Illuminate\Database\Eloquent\Relations\HasMany
+    {
+        return $this->hasMany(Transaction::class);
     }
 }

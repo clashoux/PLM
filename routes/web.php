@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\HomeController;
+use App\Http\Controllers\TransactionController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\RangeController;
@@ -9,9 +11,7 @@ use App\Http\Controllers\CityController;
 use App\Http\Controllers\LocationController;
 use App\Http\Controllers\ReferenceVersionLocationController;
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', [HomeController::class, 'index'])->name('home');
 
 Route::resource('products', ProductController::class);
 Route::group(['prefix' => 'products/{product}', 'as' => 'products.'], function () {
@@ -26,6 +26,9 @@ Route::group(['prefix' => 'cities/{city}', 'as' => 'cities.'], function () {
     Route::resource('locations', LocationController::class);
     Route::group(['prefix' => 'locations/{location}', 'as' => 'locations.'], function () {
         Route::resource('reference-versions', ReferenceVersionLocationController::class);
+        Route::group(['prefix' => 'reference-versions/{reference_version}', 'as' => 'reference-versions.'], function () {
+            Route::resource('transactions', TransactionController::class);
+        });
     });
 });
 

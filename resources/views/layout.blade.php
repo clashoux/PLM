@@ -18,7 +18,7 @@
 					<!--begin::Header container-->
 					<div class="app-container container-fluid d-flex align-items-stretch justify-content-between" id="kt_app_header_container">
                         <div class="d-flex align-items-stretch justify-content-between flex-lg-grow-1" id="kt_app_header_wrapper">
-			
+
 
                             <!--begin::Page title-->
                             <div data-kt-swapper="true" data-kt-swapper-mode="{default: 'prepend', lg: 'prepend'}" data-kt-swapper-parent="{default: '#kt_app_content_container', lg: '#kt_app_header_wrapper'}" class="page-title d-flex flex-column justify-content-center flex-wrap me-3 mb-5 mb-lg-0">
@@ -27,9 +27,9 @@
                                     @yield('title')
                                 </h1>
                                 <!--end::Title-->
-                            
+
                                 </div>
-                            <!--end::Page title-->	
+                            <!--end::Page title-->
                             </div>
 					</div>
 					<!--end::Header container-->
@@ -63,8 +63,18 @@
 								<div id="kt_app_sidebar_menu_scroll" class="scroll-y my-5 mx-3" data-kt-scroll="true" data-kt-scroll-activate="true" data-kt-scroll-height="auto" data-kt-scroll-dependencies="#kt_app_sidebar_logo, #kt_app_sidebar_footer" data-kt-scroll-wrappers="#kt_app_sidebar_menu" data-kt-scroll-offset="5px" data-kt-scroll-save-state="true">
 									<!--begin::Menu-->
 									<div class="menu menu-column menu-rounded menu-sub-indention fw-semibold fs-6" id="#kt_app_sidebar_menu" data-kt-menu="true" data-kt-menu-expand="false">
+                                        <div class="menu-item">
+                                            <!--begin:Menu link-->
+                                            <a class="menu-link" href="/">
+												<span class="menu-icon">
+													<i class="fas fa-home"></i>
+												</span>
+                                                <span class="menu-title">Dashboard</span>
+                                            </a>
+                                            <!--end:Menu link-->
+                                        </div>
                                         <!--begin:Menu item-->
-										<div class="menu-item">
+                                        <div class="menu-item">
 											<!--begin:Menu link-->
 											<a class="menu-link" href="/products">
 												<span class="menu-icon">

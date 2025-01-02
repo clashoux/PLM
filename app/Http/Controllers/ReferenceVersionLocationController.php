@@ -9,6 +9,13 @@ use App\Models\ReferenceVersionLocation;
 use Illuminate\Http\Request;
 class ReferenceVersionLocationController extends Controller
 {
+    public function show(City $city, Location $location, ReferenceVersionLocation $reference_version)
+    {
+        $referenceVersionLocation = $reference_version;
+        $transactions = $reference_version->transactions;
+
+        return view('reference-versions.show', compact('city', 'location', 'referenceVersionLocation', 'transactions'));
+    }
 
     public function edit(City $city, Location $location, ReferenceVersionLocation $reference_version)
     {

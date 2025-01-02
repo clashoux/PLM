@@ -36,6 +36,9 @@
                     <tr>
                         <td>{{ $location->name }}</td>
                         <td>
+                            <a href="{{ route('cities.locations.show', [$city->id, $location->id]) }}" class="btn btn-primary btn-sm">
+                                <i class="bi bi-eye"></i>
+                            </a>
                             <a href="{{ route('cities.locations.edit', [$city->id, $location->id]) }}" class="btn btn-primary btn-sm">
                                 <i class="fas fa-edit"></i>
                             </a>

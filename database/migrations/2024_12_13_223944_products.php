@@ -58,6 +58,16 @@ return new class extends Migration
             $table->integer('quantity');
             $table->float('selling_price');
         });
+
+        Schema::create('transactions', function (Blueprint $table) {
+            $table->id();
+            $table->foreignId('reference_version_location_id')->constrained('reference_version_locations');
+            $table->enum('type', ['In', 'Out']);
+            $table->integer('quantity');
+            $table->float('unit_price');
+            $table->date('date');
+        });
+
     }
 
     /**
