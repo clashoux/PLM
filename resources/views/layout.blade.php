@@ -106,6 +106,16 @@
 											</a>
 											<!--end:Menu link-->
 										</div>
+                                        <div class="menu-item">
+                                            <!--begin:Menu link-->
+                                            <a class="menu-link" href="/suppliers">
+												<span class="menu-icon">
+                                                    <i class="fas fa-truck-field"></i>
+												</span>
+                                                <span class="menu-title">Suppliers</span>
+                                            </a>
+                                            <!--end:Menu link-->
+                                        </div>
 									</div>
 									<!--end::Menu-->
 								</div>

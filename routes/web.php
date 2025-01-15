@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\SupplierController;
 use App\Http\Controllers\TransactionController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProductController;
@@ -14,6 +15,7 @@ use App\Http\Controllers\ReferenceVersionLocationController;
 Route::get('/', [HomeController::class, 'index'])->name('home');
 
 Route::resource('products', ProductController::class);
+Route::resource('suppliers', SupplierController::class);
 Route::group(['prefix' => 'products/{product}', 'as' => 'products.'], function () {
     Route::resource('references', ReferenceController::class);
     Route::group(['prefix' => 'references/{reference}', 'as' => 'references.'], function () {
