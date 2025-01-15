@@ -5,7 +5,7 @@
 @section('content')
     <div class="card mb-3">
         <div class="card-header">
-            <h3 class="card-title">Show Reference</h3>
+            <h3 class="card-title">Show Reference | {{ $reference->getPrefix() }} </h3>
         </div>
         <div class="card-body">
             <p>

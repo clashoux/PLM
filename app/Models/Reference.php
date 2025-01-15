@@ -26,4 +26,8 @@ class Reference extends Model
     {
         return $this->hasMany(ReferenceVersion::class, 'reference_id', 'id');
     }
+
+    public function getPrefix(){
+        return $this->product->prefix .'-'. $this->range->prefix .'-'. $this->prefix;
+    }
 }

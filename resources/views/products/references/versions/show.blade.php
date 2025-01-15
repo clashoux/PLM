@@ -5,7 +5,7 @@
 @section('content')
     <div class="card mb-3">
         <div class="card-header">
-            <h3 class="card-title">Show Reference Version</h3>
+            <h3 class="card-title">Show Reference Version | {{ $referenceVersion->getPrefix() }}</h3>
             <div class="card-toolbar">
                 <a href="{{ route('products.references.versions.edit', ['product' => $product->id, 'reference' => $reference->id, 'version' => $referenceVersion->id]) }}" class="btn btn-primary btn-sm">
                     <i class="bi bi-pencil"></i>

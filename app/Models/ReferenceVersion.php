@@ -26,4 +26,8 @@ class ReferenceVersion extends Model
     {
         return $this->hasMany(ReferenceVersionLocation::class);
     }
+
+    public function getPrefix(){
+        return $this->reference->getPrefix() .'-'. $this->name.'.'.$this->id;
+    }
 }
