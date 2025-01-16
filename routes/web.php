@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\RawMaterialController;
+use App\Http\Controllers\RawMaterialStockController;
 use App\Http\Controllers\SupplierController;
 use App\Http\Controllers\TransactionController;
 use Illuminate\Support\Facades\Route;
@@ -18,6 +19,9 @@ Route::get('/', [HomeController::class, 'index'])->name('home');
 Route::resource('products', ProductController::class);
 Route::resource('suppliers', SupplierController::class);
 Route::resource('raw-materials', RawMaterialController::class);
+Route::group(['prefix' => 'suppliers/{supplier}', 'as' => 'suppliers.'], function () {
+    Route::resource('raw-materials', RawMaterialStockController::class)->except(['index', 'show']);
+});
 Route::group(['prefix' => 'products/{product}', 'as' => 'products.'], function () {
     Route::resource('references', ReferenceController::class);
     Route::group(['prefix' => 'references/{reference}', 'as' => 'references.'], function () {

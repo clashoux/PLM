@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\City;
+use App\Models\RawMaterialStock;
 use App\Models\Transaction;
 use Illuminate\Http\Request;
 class HomeController extends Controller
@@ -21,7 +22,11 @@ class HomeController extends Controller
 
         $differenceInOutTransaction = $outTransactionTotal - $inTransactionTotal;
 
-        return view('welcome', compact('transactions', 'inTransactionTotal', 'outTransactionTotal', 'differenceInOutTransaction'));
+        $supplierCost = RawMaterialStock::all()->map(function ($rawMaterialStock) {
+            return $rawMaterialStock->quantity * $rawMaterialStock->price;
+        })->sum();
+
+        return view('welcome', compact('transactions', 'inTransactionTotal', 'outTransactionTotal', 'differenceInOutTransaction', 'supplierCost'));
     }
 
 }

@@ -83,6 +83,28 @@
                 </div>
                 <!--end::Info-->
             </div>
+
+            <div class="d-flex flex-column flex-center h-200px w-200px h-lg-250px w-lg-250px m-3 bg-light rounded-circle">
+                <!--begin::Symbol-->
+                <i class="fas fa-dollar-sign fs-4x text-primary mb-3"></i>
+                <!--begin::Info-->
+                <div class="mb-0">
+                    <!--begin::Value-->
+                    <div class="fs-lg-2hx fs-2x fw-bold text-gray-800 d-flex flex-center">
+                        <div id="test" class="min-w-70px counted" data-kt-countup="true" data-kt-countup-value="{{ $supplierCost }}" data-kt-countup-suffix="M+" data-kt-initialized="1">
+                            {{ $supplierCost }}€
+                        </div>
+                    </div>
+                    <!--end::Value-->
+
+                    <!--begin::Label-->
+                    <span class="text-gray-600 fw-semibold fs-5 lh-0">
+                        Total supplier cost
+                    </span>
+                    <!--end::Label-->
+                </div>
+                <!--end::Info-->
+            </div>
             <!--end::Item-->
         </div>
         <!--end::Items-->

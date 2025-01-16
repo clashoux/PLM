@@ -12,4 +12,9 @@ class Supplier extends Model
 
     public $timestamps = false;
 
+    public function rawMaterialStocks()
+    {
+        return $this->hasMany(RawMaterialStock::class);
+    }
+
 }
